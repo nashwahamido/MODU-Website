@@ -10,7 +10,7 @@ browser and it works.
 ## Contents
 
 ```
-modu-site/
+MODU-Website/
 ├── index.html      the entire site: markup, styles, one script
 ├── .nojekyll       empty, and load bearing: see Deploying
 ├── README.md
@@ -23,7 +23,7 @@ Double clicking `index.html` is enough for most work. If you need a real origin,
 to test with a service worker or to avoid a browser blocking a local file, serve the folder:
 
 ```bash
-cd modu-site
+cd MODU-Website
 python3 -m http.server 8000
 ```
 
@@ -41,13 +41,15 @@ variables. The only requirement is that `assets/` keeps its name and stays besid
 This is the site's home. Free for public repositories, HTTPS included, and the deploy is a
 push.
 
-1. Create a public repository named `modu-site` and put the contents of this folder at its
-   root, so `index.html` sits at the top level rather than inside a subfolder.
-2. Push to `main`.
-3. In the repository, go to Settings, then Pages. Set Source to "Deploy from a branch",
+The site lives at [github.com/nashwahamido/MODU-Website](https://github.com/nashwahamido/MODU-Website),
+with `index.html` at the repository root rather than inside a subfolder.
+
+1. Push to `main`.
+2. In the repository, go to Settings, then Pages. Set Source to "Deploy from a branch",
    choose `main` and the `/ (root)` folder, and save.
-4. Wait about a minute, then open `https://<user>.github.io/modu-site/`.
-5. Return to Settings, then Pages, and tick "Enforce HTTPS" once the option appears. It is
+3. Wait about a minute, then open `https://nashwahamido.github.io/MODU-Website/`. Note the
+   capitals: that path is case sensitive.
+4. Return to Settings, then Pages, and tick "Enforce HTTPS" once the option appears. It is
    greyed out until the certificate is issued, usually within a few minutes.
 
 After that, every push to `main` republishes the site. There is no build step and no workflow
@@ -57,8 +59,10 @@ file to maintain.
 skips any file or folder whose name begins with an underscore. Nothing here starts with one,
 but the empty `.nojekyll` file at the root turns the build off entirely, so what is in the
 repository is exactly what is served. Do not delete it. It is empty on purpose, and because it
-is a dotfile some file managers and archive tools hide it, so check it survived if you ever
-copy this folder by hand.
+is a dotfile it is easy to lose: Windows Explorer resists creating a name that starts with a
+dot, and some archive tools hide the file entirely. It was committed as `nojekyll` once for
+exactly that reason. If it happens again, `git mv nojekyll .nojekyll` puts it right, since git
+has no such objection.
 
 **Filename case matters once it is deployed.** Windows and macOS treat `LACK-wooden.png` and
 `lack-wooden.png` as the same file. The Pages server does not. A mismatched capital renders
