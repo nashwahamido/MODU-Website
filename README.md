@@ -3,19 +3,22 @@
 A one page static site for Modu, the guided 3D furniture assembly app built as an MSc
 Interactive Digital Media project at Trinity College Dublin.
 
-The whole site is a single HTML file with its CSS and JavaScript inline, plus a folder of
-images. There is no build step, no framework and no dependencies. Open `index.html` in a
-browser and it works.
+Three plain files and a folder of images: markup, stylesheet, one small script. There is no
+build step, no framework and no dependencies. Open `index.html` in a browser and it works.
 
 ## Contents
 
 ```
 MODU-Website/
-├── index.html      the entire site: markup, styles, one script
+├── index.html      the markup, and nothing else
+├── styles.css      every rule, ordered the way the page is
+├── main.js         the reveal on scroll observer, and only that
 ├── .nojekyll       empty, and load bearing: see Deploying
 ├── README.md
 └── assets/         15 PNGs, all referenced by index.html
 ```
+
+All three are linked by relative path, so they have to stay beside each other.
 
 ## Running it
 
@@ -101,7 +104,7 @@ The footer carries the project note, the nav links again and the copyright line.
 
 ## How it is put together
 
-**Design tokens.** The `:root` block at the top of the stylesheet mirrors the app's own
+**Design tokens.** The `:root` block at the top of `styles.css` mirrors the app's own
 palette from `src/game/ui/system/theme.ts` in the Modu repo. If a colour changes in the app,
 change it here too. They are not linked, so they drift silently.
 
@@ -114,9 +117,9 @@ without touching every rule that uses it.
 **The workbench grid.** The faint graph paper behind everything is two CSS linear gradients
 on `body`, not an image.
 
-**Reveal on scroll.** One `IntersectionObserver` at the bottom of the file adds an `in` class
-to every element marked `.rise`, with a short stagger so a row of cards arrives together. If
-the visitor asks for reduced motion, the script adds the class to everything immediately and
+**Reveal on scroll.** `main.js` holds one `IntersectionObserver` that adds an `in` class to
+every element marked `.rise`, with a short stagger so a row of cards arrives together. If the
+visitor asks for reduced motion, the script adds the class to everything immediately and
 returns without observing anything.
 
 **Motion.** The mascot bobs on a six second loop. Every animation and transition is disabled
