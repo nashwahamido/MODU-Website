@@ -12,6 +12,7 @@ browser and it works.
 ```
 modu-site/
 ├── index.html      the entire site: markup, styles, one script
+├── .nojekyll       empty, and load bearing: see Deploying
 ├── README.md
 └── assets/         15 PNGs, all referenced by index.html
 ```
@@ -34,6 +35,51 @@ Upload the folder as it stands. Any static host works: GitHub Pages, Netlify, Ve
 bucket, or a plain directory on a web server. There is nothing to compile and no environment
 variables. The only requirement is that `assets/` keeps its name and stays beside
 `index.html`, because every image path is relative.
+
+### GitHub Pages
+
+This is the site's home. Free for public repositories, HTTPS included, and the deploy is a
+push.
+
+1. Create a public repository named `modu-site` and put the contents of this folder at its
+   root, so `index.html` sits at the top level rather than inside a subfolder.
+2. Push to `main`.
+3. In the repository, go to Settings, then Pages. Set Source to "Deploy from a branch",
+   choose `main` and the `/ (root)` folder, and save.
+4. Wait about a minute, then open `https://<user>.github.io/modu-site/`.
+5. Return to Settings, then Pages, and tick "Enforce HTTPS" once the option appears. It is
+   greyed out until the certificate is issued, usually within a few minutes.
+
+After that, every push to `main` republishes the site. There is no build step and no workflow
+file to maintain.
+
+**`.nojekyll` is why there is no build.** GitHub Pages runs a Jekyll build by default, which
+skips any file or folder whose name begins with an underscore. Nothing here starts with one,
+but the empty `.nojekyll` file at the root turns the build off entirely, so what is in the
+repository is exactly what is served. Do not delete it. It is empty on purpose, and because it
+is a dotfile some file managers and archive tools hide it, so check it survived if you ever
+copy this folder by hand.
+
+**Filename case matters once it is deployed.** Windows and macOS treat `LACK-wooden.png` and
+`lack-wooden.png` as the same file. The Pages server does not. A mismatched capital renders
+fine locally and 404s in production, which is a confusing bug to chase. Every reference in
+`index.html` currently matches its filename exactly. Keep it that way when adding art.
+
+### A custom domain
+
+Optional, and the only part that costs anything. Buy a domain, then in Settings, then Pages,
+enter it under "Custom domain" and save. GitHub writes a `CNAME` file into the repository.
+At the registrar, point the apex at GitHub's four A records and add a `www` CNAME to
+`<user>.github.io`. GitHub issues the certificate for the new domain automatically. Their
+documentation walks through the DNS records and recommends verifying the domain first, which
+protects it from being claimed by someone else later.
+
+### Other hosts
+
+Netlify and Cloudflare Pages both host this free and add per branch deploy previews. Neither
+buys much for a single page site with one maintainer, but either is a drop in replacement:
+point it at the repository, leave the build command empty, and set the publish directory to
+the root.
 
 ## Page structure
 
