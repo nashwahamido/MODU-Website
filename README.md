@@ -94,7 +94,7 @@ Five blocks, in order:
 
 | Section | Anchor | What it holds |
 | --- | --- | --- |
-| Hero | none | Wordmark, nav, headline, lede, store buttons, mascot |
+| Hero | none | Wordmark, nav, headline, lede, the event card, mascot |
 | The loop | `#how` | Two numbered stages, each with a row of furniture thumbnails |
 | Helping modes | `#modes` | The four companions, one card each |
 | Your room | `#room` | The dark band: room render and the five finishes |
@@ -157,6 +157,12 @@ with `.shelf` on `margin-top: auto`, so the two rows of thumbnails line up whate
 above them wraps to. Do not replace this with a hard height.
 
 **Alt text** is written for every image. Keep it if you swap art.
+
+**The hero's event card is dated.** It advertises an August 2026 showcase. After the event it
+should come out, or the site is advertising something that has already happened. It is one
+self-contained `.visit` block in the markup and one section in the stylesheet, so removal is
+clean. The App Store and Google Play placeholders that used to sit below it were removed to
+make room, and can come back the same way.
 
 **`assets/mascot.png` is 2.1MB** and renders at 430px. Downscaling it before a public launch
 would cut the page weight by roughly half.
