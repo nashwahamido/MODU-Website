@@ -1,3 +1,12 @@
+/* Modu, marketing site
+ *
+ * Loaded by index.html. Ordered the way the page is: tokens, then the shared instruction
+ * sheet rule, then each section top to bottom, then the two breakpoints last.
+ *
+ * Two conventions worth keeping. Nothing here uses a raw hex outside the :root block, so a
+ * palette change is one edit. And the comments explain why a rule is the way it is, not what
+ * it does, because the what is already in the property name.
+ */
 
 /* ── tokens: the app's own palette, straight from src/game/ui/system/theme.ts ───────────── */
 :root{
@@ -105,10 +114,11 @@ section{padding:clamp(48px,7vw,92px) 0}
 /* the team — a card each, borrowing the companion cards' shape so the page keeps one language */
 .team{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,2vw,22px); margin-top:44px}
 .member{background:var(--cream); border:1px solid var(--hair); border-radius:18px; padding:24px 20px; text-align:center}
-.member .initial{width:74px; height:74px; margin:0 auto 14px; border-radius:50%;
-  background:radial-gradient(circle at 50% 38%,#fff 0%,#F7F1E6 55%,#DCCFB8 100%);
-  display:flex; align-items:center; justify-content:center;
-  font-size:26px; font-weight:600; color:var(--lavender); letter-spacing:-.02em}
+/* The portraits are square files cropped around the face, so a circle can be cut from any of
+   them without a subject drifting off centre. `alt` is empty on purpose: the name is the very
+   next line, and a filled alt would have a screen reader read every person's name twice. */
+.member .portrait{width:118px; height:118px; margin:0 auto 16px; border-radius:50%;
+  display:block; object-fit:cover; background:var(--raised); border:1px solid var(--hair)}
 .member h3{font-size:17px; font-weight:600; margin:0 0 3px; letter-spacing:-.01em}
 /* Two job titles to a line, so this loosens off the part-code tracking: at .14em these wrap
    badly and read as a code rather than a description. */
