@@ -137,8 +137,21 @@
       <p class="sub">Finished pieces land in a room you own. Moved, rotated, refinished, and lit
         how you like it. Assemble in dark mode when you want the workbench quiet; your room stays
         exactly as you left it.</p>
-      <img class="roomshot" src="assets/room.png"
-           alt="A Modu room seen from outside its open corner: timber walls, two windows, a desk, a chest of drawers, stools and a bench">
+      <div class="rooms" role="group" aria-label="Three rooms built in Modu" data-rooms>
+        <div class="rooms-frame">
+          <img class="roomshot is-on" src="assets/rooms/room-1.png"
+               alt="A Modu room with cream walls and herringbone parquet: a wardrobe, a bed, a desk under a wall of framed photos, and a bench of yellow stools">
+          <img class="roomshot" src="assets/rooms/room-2.png" loading="lazy"
+               alt="A Modu room with timber walls and dark tiled floor: a desk, an armchair, a low table, a chest of drawers and a step stool">
+          <img class="roomshot" src="assets/rooms/room-3.png" loading="lazy"
+               alt="A Modu room with blue mosaic walls and terracotta tiles: a bookcase, a low table, an armchair, a chest of drawers and a bench of yellow stools">
+        </div>
+        <div class="rooms-dots">
+          <button type="button" class="is-on" aria-label="Show room 1"></button>
+          <button type="button" aria-label="Show room 2"></button>
+          <button type="button" aria-label="Show room 3"></button>
+        </div>
+      </div>
       <div class="finishes">
         <div class="finish"><span style="background:#C0A58A"></span><b>Wooden</b></div>
         <div class="finish"><span style="background:#767F48"></span><b>Cozy</b></div>

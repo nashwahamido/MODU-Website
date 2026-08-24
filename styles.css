@@ -141,7 +141,20 @@ section{padding:clamp(48px,7vw,92px) 0}
 .room .code{color:#8f857c}
 /* The room itself, sitting between the promise and the finishes it is wearing.
    The art is a cut-out on transparency, so it needs no card and reads straight off the ink. */
-.roomshot{display:block; width:100%; max-width:520px; height:auto; margin:30px 0 0}
+/* Room carousel. The three renders are different heights, so the frame holds ONE aspect ratio
+   (the tallest of the three) and each image is contained inside it. That keeps every room at
+   the same width and stops the dark band from changing height as the slides swap. */
+.rooms{margin:30px auto 0; max-width:560px}
+.rooms-frame{position:relative; width:100%; aspect-ratio:1100 / 873}
+.roomshot{position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  opacity:0; transition:opacity .9s ease}
+.roomshot.is-on{opacity:1}
+.rooms-dots{display:flex; justify-content:center; gap:9px; margin-top:2px}
+.rooms-dots button{width:9px; height:9px; padding:0; border-radius:50%; cursor:pointer;
+  border:0; background:#5b524f; transition:background .3s ease, transform .3s ease}
+.rooms-dots button.is-on{background:var(--paper); transform:scale(1.25)}
+.rooms-dots button:hover{background:var(--lavender-lift)}
+.rooms-dots button:focus-visible{outline:2px solid var(--lavender-lift); outline-offset:3px}
 .finishes{display:flex; gap:14px; margin-top:30px; flex-wrap:wrap}
 .finish{text-align:center}
 .finish span{display:block; width:74px; height:74px; border-radius:14px; margin-bottom:9px; border:1px solid rgba(250,247,241,.16)}
@@ -189,9 +202,11 @@ footer a{color:var(--ink-soft)}
   .visit li{font-size:14.5px; grid-template-columns:21px 1fr}
   section{padding:clamp(38px,9vw,60px) 0}
   .room{padding:26px 20px 30px}
-  .roomshot{margin-top:24px}
+  .rooms{margin-top:24px}
 }
 @media (prefers-reduced-motion:reduce){
+  /* The carousel stops advancing in main.js too, so this only flattens the crossfade. */
+  .roomshot{transition:none}
   *{animation:none!important; transition:none!important}
   .rise{opacity:1; transform:none}
 }
