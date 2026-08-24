@@ -42,17 +42,17 @@
 
   // Hovering or tabbing in usually means someone is looking at a particular room.
   root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', function () { if (allowed()) start(); });
+  root.addEventListener('mouseleave', start);
   root.addEventListener('focusin', stop);
-  root.addEventListener('focusout', function () { if (allowed()) start(); });
+  root.addEventListener('focusout', start);
   // A background tab should not be burning through slides.
   document.addEventListener('visibilitychange', function () {
-    if (document.hidden) stop(); else if (allowed()) start();
+    if (document.hidden) stop(); else start();
   });
 
-  function allowed() {
-    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  }
-  // Reduced motion leaves the first room up; the dots still work for anyone who wants the rest.
-  if (allowed()) start();
+  // The carousel advances for everyone, including under reduced motion. A crossfade between
+  // two still images is not the kind of movement that setting is there to suppress, and the
+  // rooms are the point of this section. Reduced motion gets a hard cut instead of a fade,
+  // which the stylesheet handles, so nothing animates but the rooms still take their turn.
+  start();
 })();
