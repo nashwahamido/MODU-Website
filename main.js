@@ -25,7 +25,7 @@
   var slides = root.querySelectorAll('.roomshot');
   var dots   = root.querySelectorAll('.rooms-dots button');
   var i = 0, timer = null;
-  var DWELL = 5000;
+  var DWELL = 3200;
 
   function show(n) {
     i = (n + slides.length) % slides.length;

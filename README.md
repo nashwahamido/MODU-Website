@@ -117,11 +117,12 @@ without touching every rule that uses it.
 **The workbench grid.** The faint graph paper behind everything is two CSS linear gradients
 on `body`, not an image.
 
-**The room carousel.** `main.js` crossfades the three renders on a five second dwell. It stops
-on hover, on keyboard focus, and when the tab is in the background, and it does not advance at
-all under reduced motion, where the dots still work for anyone who wants to see the other two.
-The frame holds a single aspect ratio, the tallest of the three, with each render contained
-inside it. That is what keeps the dark band from changing height as the slides swap.
+**The room carousel.** `main.js` crossfades the three renders on a 3.2 second dwell. It stops
+on hover, on keyboard focus, and when the tab is in the background. Under reduced motion it
+still advances, but each room cuts in rather than fading, since a crossfade between two still
+images is not the sort of movement that setting exists to suppress. The frame holds a single
+aspect ratio, the tallest of the three, with each render contained inside it. That is what
+keeps the dark band from changing height as the slides swap.
 
 **Reveal on scroll.** `main.js` holds one `IntersectionObserver` that adds an `in` class to
 every element marked `.rise`, with a short stagger so a row of cards arrives together. If the
