@@ -12,7 +12,7 @@ build step, no framework and no dependencies. Open `index.html` in a browser and
 MODU-Website/
 ├── index.html      the markup, and nothing else
 ├── styles.css      every rule, ordered the way the page is
-├── main.js         the reveal on scroll observer, and only that
+├── main.js         the reveal observer, the back to top button, the room carousel
 ├── .nojekyll       empty, and load bearing: see Deploying
 ├── README.md
 └── assets/         15 PNGs, all referenced by index.html
@@ -90,14 +90,15 @@ the root.
 
 ## Page structure
 
-Five blocks, in order:
+Six blocks, in order:
 
 | Section | Anchor | What it holds |
 | --- | --- | --- |
-| Hero | none | Wordmark, nav, headline, lede, the event card, mascot |
+| Hero | none | Wordmark, nav, headline, lede, the two buttons, mascot |
 | The loop | `#how` | Two numbered stages, each with a row of furniture thumbnails |
 | Helping modes | `#modes` | The four companions, one card each |
 | Your room | `#room` | The dark band: the room carousel and the five finishes |
+| Video demo | `#demo` | The YouTube walkthrough, embedded |
 | Meet the team | `#team` | Six member cards |
 
 The footer carries the project note, the nav links again and the copyright line.
@@ -129,6 +130,13 @@ every element marked `.rise`, with a short stagger so a row of cards arrives tog
 visitor asks for reduced motion, the script adds the class to everything immediately and
 returns without observing anything.
 
+**Back to top.** A fixed circle in the bottom right, shown once the page is a viewport and a
+half down and hidden again near the top. It is an `<a href="#top">` rather than a button, so
+it still works with the script blocked, and while hidden it is given `tabindex="-1"` and
+`aria-hidden` so nobody tabs into a control that is not on screen. The glide comes from
+`scroll-behavior: smooth` on `html`, which every anchor on the page gets, and which reverts
+to a jump under reduced motion.
+
 **Motion.** The mascot bobs on a six second loop. Every animation and transition is disabled
 under `prefers-reduced-motion: reduce`.
 
@@ -143,7 +151,7 @@ Two breakpoints, both mobile facing:
   column grid, but once stacked the container had nothing to constrain it and the disc grew
   over the wordmark. Keep the two in proportion if you change either.
 - **560px and below.** Nav hides, every card grid drops to one column, the hero art shrinks
-  further, the store buttons split one row via `flex: 1`, and the five finish swatches become
+  further, the two hero buttons stack full width, and the five finish swatches become
   an explicit five column grid rather than a wrapping flex row, which otherwise broke four
   plus one and stranded the last swatch.
 
@@ -165,11 +173,42 @@ above them wraps to. Do not replace this with a hard height.
 
 **Alt text** is written for every image. Keep it if you swap art.
 
-**The hero's event card is dated.** It advertises an August 2026 showcase. After the event it
-should come out, or the site is advertising something that has already happened. It is one
-self-contained `.visit` block in the markup and one section in the stylesheet, so removal is
-clean. The App Store and Google Play placeholders that used to sit below it were removed to
-make room, and can come back the same way.
+**The team cards carry a LinkedIn mark beside each name, and the six hrefs ship as
+placeholders.** They point at `https://www.linkedin.com/in/` until someone pastes the real
+profiles in. The mark is deliberately always visible rather than revealed on hover: a touch
+screen has no hover state, and iOS spends the first tap manufacturing one, so a hover reveal
+costs a phone visitor two taps and looks broken on the first. Hover only darkens it.
+
+The mark lives inside the `<h3>`, immediately after the name, so it follows the last word and
+travels with it when a long name wraps. The glyph is 15px, but `.li` carries 9px of padding
+cancelled by an equal negative margin, so the tap target is 33px square while the name line is
+laid out as though the icon were bare. A 15px hit area is a miss tap on a phone. Each link also carries an `aria-label` naming the
+person, because six links all announcing "LinkedIn" are indistinguishable to a screen reader
+listing them. A card with no link still lays out, so deleting one is safe.
+
+**The hero ends in two buttons.** One out to Instagram, one down to the demo section. They
+replaced the August 2026 showcase card once the event had run. The filled button uses
+`--lavender-deep` rather than `--lavender`: paper on the accent lavender is 3.8:1, which
+fails AA at 13px. The same token carries the small uppercase labels on the companion and team
+cards for the same reason, so reach for it whenever the lavender is small or behind text.
+
+**The demo video asks for captions, but cannot supply them.** The embed carries
+`cc_load_policy=1` and `cc_lang_pref=en`, which start playback with English captions showing.
+Both are requests to the player, not a caption track. If the video in YouTube Studio has no
+subtitles, nothing appears and the CC button stays hidden, and the parameters are silently
+ignored. Auto captions count, but they are approximate and worth correcting by hand for a
+demo that names four companions. Add or edit them under Subtitles in YouTube Studio; the
+change takes effect in the embed with no edit here.
+
+**The share card is absolute.** The `og:` tags in the head hard code
+`https://modugamified.vercel.app/`, because Open Graph will not resolve a relative path. If
+the site moves to a custom domain, change `og:url` and `og:image` together.
+
+`assets/share-card.png` is 1200x630, the ratio every scraper crops a large summary card to.
+It is the wordmark cut out of the square `Modu_Dark_over_light.png` and laid on the same
+cream, at 68% of the card width so the mark keeps its quiet space. Feeding a 1080x1080 file
+straight to `summary_large_image` would have had Twitter and LinkedIn slice the top and
+bottom off it. `assets/icon.png`, the favicon, is the face mark at 256px.
 
 **`assets/mascot.png` is 2.1MB** and renders at 430px. Downscaling it before a public launch
 would cut the page weight by roughly half.

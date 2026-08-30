@@ -6,6 +6,17 @@
 <title>Modu, furniture assembly made calmer</title>
 <meta name="description" content="Modu turns flat pack furniture assembly into a guided 3D build. Four helping modes, one step at a time, and a room to keep what you make.">
 <link rel="icon" href="assets/icon.png">
+<!-- Share card. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Modu">
+<meta property="og:url" content="https://modugamified.vercel.app/">
+<meta property="og:title" content="Modu, furniture assembly made calmer">
+<meta property="og:description" content="Modu turns flat pack furniture assembly into a guided 3D build. Four helping modes, one step at a time, and a room to keep what you make.">
+<meta property="og:image" content="https://modugamified.vercel.app/assets/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Modu wordmark, rounded dark letters with a screw head set into the M and the U, on cream">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -13,7 +24,7 @@
 </head>
 <body>
 
-<div class="wrap">
+<div class="wrap" id="top">
   <header>
     <div class="brandrow">
       <img src="assets/wordmark.png" alt="Modu">
@@ -21,6 +32,7 @@
         <a href="#how">How it works</a>
         <a href="#modes">Helping modes</a>
         <a href="#room">Your room</a>
+        <a href="#demo">Video Demo</a>
         <a href="#team">The team</a>
       </nav>
     </div>
@@ -30,17 +42,19 @@
     <div>
       <p class="eyebrow">One step at a time</p>
       <h1>Furniture Assembly,<br><em>Made Calmer.</em></h1>
-      <p class="lede">Modu turns an instruction booklet into a 3D build you can hold in your hands.
-        One step, one part, and a companion who tells you what comes next.</p>
+      <p class="lede">Modu turns an instruction booklet into a 3D build you can hold in your hands. One step, one part, and a companion who tells you what comes next.</p>
 
-      <div class="visit rise">
-        <p class="visit-title">Come see us!</p>
-        <ul>
-          <li><span aria-hidden="true">📅</span>28 to 29 August 2026</li>
-          <li><span aria-hidden="true">⏰</span>12 to 5 PM</li>
-          <li><span aria-hidden="true">📍</span>Martin Naughton E3 Learning Foundry, Trinity College Dublin</li>
-          <li><span aria-hidden="true">🎟️</span>Free entry</li>
-        </ul>
+      <div class="cta rise">
+        <a class="btn btn-primary" href="https://www.instagram.com/modugamifiedapp/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Follow us
+        </a>
+        <a class="btn btn-ghost" href="#demo">Watch the demo</a>
       </div>
 
     </div>
@@ -58,15 +72,13 @@
   <div class="wrap">
     <p class="rule"><span class="code">The loop, 01 to 02</span></p>
     <h2 class="h2">Pick a piece. Build it.</h2>
-    <p class="sub">Every build is the same two stages, so the second piece of furniture is never
-      a new interface, only a new object.</p>
+    <p class="sub">Every build is the same two stages, so the second piece of furniture is never a new interface, only a new object.</p>
 
     <div class="stages">
       <div class="stage rise">
         <div class="n">01</div>
         <h3>Choose a finish</h3>
-        <p>Four models, four finishes each. The one on the card is the one you build. Wooden,
-          cozy, cartoon, or the colour it comes in.</p>
+        <p>Four models, four finishes each. The one on the card is the one you build. Wooden, cozy, cartoon, or the colour it comes in.</p>
         <div class="shelf">
           <img src="assets/LACK-wooden.png" alt="LACK side table, wooden">
           <img src="assets/LACK-cozy.png" alt="LACK side table, cozy olive">
@@ -77,8 +89,7 @@
       <div class="stage rise">
         <div class="n">02</div>
         <h3>Build it in 3D</h3>
-        <p>Drag each part into place, drive the screws, and check your work. Reach for the wrong
-          piece and your companion says so, gently, once.</p>
+        <p>Drag each part into place, drive the screws, and check your work. Reach for the wrong piece and your companion says so, gently, once.</p>
         <div class="shelf">
           <img src="assets/LACK-cartoon.png" alt="LACK side table, cartoon">
           <img src="assets/DALFRED-cozy.png" alt="DALFRED bar stool, cozy olive">
@@ -95,9 +106,7 @@
   <div class="wrap">
     <p class="rule"><span class="code">Four ways to be helped</span></p>
     <h2 class="h2">One app, four ways through it.</h2>
-    <p class="sub">A short questionnaire matches you to a mode, and a companion to go with it.
-      The mode sets the defaults. How much is said, how much is shown, how much is up to you.
-      Every one of them stays adjustable.</p>
+    <p class="sub">A short questionnaire matches you to a mode, and a companion to go with it. The mode sets the defaults. How much is said, how much is shown, how much is up to you. Every one of them stays adjustable.</p>
 
     <div class="modes">
       <div class="mode rise">
@@ -134,9 +143,7 @@
     <div class="room">
       <p class="rule"><span class="code">Your room</span></p>
       <h2 class="h2">Somewhere to put it all.</h2>
-      <p class="sub">Finished pieces land in a room you own. Moved, rotated, refinished, and lit
-        how you like it. Assemble in dark mode when you want the workbench quiet; your room stays
-        exactly as you left it.</p>
+      <p class="sub">Finished pieces land in a room you own. Moved, rotated, refinished, and lit how you like it. </p>
       <div class="rooms" role="group" aria-label="Three rooms built in Modu" data-rooms>
         <div class="rooms-frame">
           <img class="roomshot is-on" src="assets/rooms/room-1.png"
@@ -163,43 +170,63 @@
   </div>
 </section>
 
+<!-- ── demo ───────────────────────────────────────────────────────────────────────── -->
+<section id="demo">
+  <div class="wrap">
+    <p class="rule"><span class="code">App Demo</span></p>
+    <h2 class="h2">See how it all fits together.</h2>
+    <p class="sub">The questionnaire, the mode it picks for you, a build taken step by step, and the finished piece landing in your room. This video gives you one run through the core features.</p>
+
+    <div class="demo rise">
+      <!-- rel=0 keeps the end cards on this channel, modestbranding drops the logo, iv_load_policy=3 kills annotations, color=white quiets the progress bar. cc_load_policy=0 starts the video without captions showing. -->
+      <iframe src="https://www.youtube-nocookie.com/embed/rp1c4ykVAPM?rel=0&amp;modestbranding=1&amp;iv_load_policy=3&amp;playsinline=1&amp;color=white&amp;cc_load_policy=0&amp;cc_lang_pref=en" title="A walkthrough of Modu, from questionnaire to finished room" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- ── the team ───────────────────────────────────────────────────────────────────────── -->
 <section id="team">
   <div class="wrap">
     <p class="rule"><span class="code">Who built it</span></p>
     <h2 class="h2">Meet the team.</h2>
-    <p class="sub">Six people built Modu as an MSc project at Trinity College Dublin, from the
-      3D models and the assembly engine to the questionnaire that decides how much help you get.</p>
+    <p class="sub">Six people built Modu as an MSc project at Trinity College Dublin, from the 3D models and the assembly engine to the questionnaire that decides how much help you get.</p>
 
     <div class="team">
       <div class="member rise">
         <img class="portrait" src="assets/team/nashwa.jpg" alt="" width="512" height="512">
-        <h3>Nashwa Hamido</h3>
+        <h3>Nashwa Hamido <a class="li" href="https://www.linkedin.com/in/nashwa-hamido/" target="_blank" rel="noopener"
+            aria-label="Nashwa Hamido on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
         <p>Project Manager / Full Stack Developer</p>
       </div>
       <div class="member rise">
         <img class="portrait" src="assets/team/ge.jpg" alt="" width="512" height="512">
-        <h3>Ge You</h3>
-        <p>Backend Lead / Strategist</p>
+        <h3>Ge You <a class="li" href="https://www.linkedin.com/in/ge-you/" target="_blank" rel="noopener"
+            aria-label="Ge You on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
+        <p>Backend Lead</p>
+        <p>(Assembly Logic &amp; 3D Pipeline)</p>
       </div>
       <div class="member rise">
         <img class="portrait" src="assets/team/sherin.jpg" alt="" width="512" height="512">
-        <h3>Sherin Glady</h3>
-        <p>Visual Designer / Illustrator</p>
+        <h3>Sherin Glady <a class="li" href="https://www.linkedin.com/in/sherin-glady/" target="_blank" rel="noopener"
+            aria-label="Sherin Glady on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
+        <p>Visual Designer / Illustrator / Marketing</p>
       </div>
       <div class="member rise">
         <img class="portrait" src="assets/team/emma.jpg" alt="" width="512" height="512">
-        <h3>Emma Tianyi</h3>
+        <h3>Emma Tianyi <a class="li" href="https://www.linkedin.com/in/emma-sun-138798325/" target="_blank" rel="noopener"
+            aria-label="Emma Tianyi on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
         <p>UX Designer / 3D Artist</p>
       </div>
       <div class="member rise">
         <img class="portrait" src="assets/team/astrid.jpg" alt="" width="512" height="512">
-        <h3>Astrid Yin</h3>
+        <h3>Astrid Yin <a class="li" href="https://www.linkedin.com/in/astridyin/" target="_blank" rel="noopener"
+            aria-label="Astrid Yin on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
         <p>Strategist / Narrative Designer</p>
       </div>
       <div class="member rise">
         <img class="portrait" src="assets/team/krystyna.jpg" alt="" width="512" height="512">
-        <h3>Krystyna Mikava</h3>
+        <h3>Krystyna Mikava <a class="li" href="https://www.linkedin.com/in/krystyna-mikava/" target="_blank" rel="noopener"
+            aria-label="Krystyna Mikava on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
         <p>UX/UI Designer / Frontend Developer</p>
       </div>
     </div>
@@ -210,13 +237,21 @@
   <div class="wrap">
     <p class="rule"><span class="code">Modu</span></p>
     <div class="footrow">
-      <p style="margin:0; max-width:44ch">An MSc Interactive Digital Media project, Trinity College Dublin.
-        Furniture names are used to describe the pieces modelled; Modu is not affiliated with IKEA.</p>
-      <p style="margin:0"><a href="#how">How it works</a>, <a href="#modes">Helping modes</a>, <a href="#team">The team</a></p>
+      <p class="footnote">An MSc Interactive Digital Media project, Trinity College Dublin. Furniture names are used to describe the pieces modelled; Modu is not affiliated with IKEA.</p>
+      <p class="footlinks"><a href="#how">How it works</a>, <a href="#modes">Helping modes</a>,
+        <a href="#room">Your room</a>, <a href="#demo">Video demo</a>, <a href="#team">The team</a></p>
     </div>
     <p class="copyright">&copy; 2026 Modu. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- ATo top btn -->
+<a class="totop" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V6"></path><path d="M6 12l6-6 6 6"></path>
+  </svg>
+</a>
 
 <script src="main.js"></script>
 </body>

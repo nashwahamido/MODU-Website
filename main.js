@@ -17,6 +17,32 @@
 })();
 
 
+// Back to top: shown once the hero is well out of the way, hidden again near the top.
+(function () {
+  var btn = document.querySelector('.totop');
+  if (!btn) return;
+
+  // One viewport and a half. Below that the header is still close enough to scroll back to.
+  function threshold() { return window.innerHeight * 1.5; }
+  var on = false;
+
+  function sync() {
+    var want = window.scrollY > threshold();
+    if (want === on) return;
+    on = want;
+    btn.classList.toggle('is-on', on);
+    // Hidden means hidden: no tabbing to a control that is not on screen.
+    btn.setAttribute('tabindex', on ? '0' : '-1');
+    btn.setAttribute('aria-hidden', on ? 'false' : 'true');
+  }
+
+  sync();
+  // The scroll position is only read here, never written, so this listener never blocks.
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+})();
+
+
 // Room carousel: crossfade through the rooms, pause when it is not being watched.
 (function () {
   var root = document.querySelector('[data-rooms]');
