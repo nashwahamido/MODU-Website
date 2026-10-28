@@ -1,6 +1,6 @@
 # MODU website
 
-The product website for [MODU](https://github.com/nashwahamido/Modu-MobileApp), a gamified 3D furniture assembly app for Android, designed around cognitive accessibility. Built as part of an MSc Interactive Digital Media team project at Trinity College Dublin.
+The product website for [MODU](https://github.com/nashwahamido/Modu-MobileApp), a gamified 3D furniture assembly mobile app for Android and iOS, designed around cognitive accessibility. Built as part of an MSc Interactive Digital Media team project at Trinity College Dublin.
 
 - **Live site:** [modugamified.vercel.app](https://modugamified.vercel.app)
 - **Designed and built by:** Nashwa Hamido
@@ -82,7 +82,7 @@ Checked for horizontal overflow at 360, 390, 768 and 1440 px.
 
 ## Credits
 
-Website designed and built by Nashwa Hamido and updated by MODU team. 
+Website designed and built by Nashwa Hamido and updated by MODU team.
 
 The MODU app was built by the MODU team:
 
