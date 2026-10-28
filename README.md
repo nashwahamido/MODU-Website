@@ -3,7 +3,7 @@
 The product website for [MODU](https://github.com/nashwahamido/Modu-MobileApp), a gamified 3D furniture assembly app for Android, designed around cognitive accessibility. Built as part of an MSc Interactive Digital Media team project at Trinity College Dublin.
 
 - **Live site:** [modugamified.vercel.app](https://modugamified.vercel.app)
-- **Design and front end:** Nashwa Hamido
+- **Designed and built by:** Nashwa Hamido
 
 It's a single hand-built page in plain HTML, CSS and JavaScript. There's no framework, no build step and no dependencies.
 
@@ -80,8 +80,19 @@ Checked for horizontal overflow at 360, 390, 768 and 1440 px.
 - **Filename case matters on the server.** `LACK-wooden.png` and `lack-wooden.png` are different files once deployed, even if they look the same on Windows or macOS.
 - **Room renders** are cleaned of near-invisible pixels and compressed before use. Do the same for any new room image, or it will show a faint box on the dark background and slow the page down.
 
-## Team
+## Credits
 
-Built by Nashwa Hamido, Astrid Yin, Emma Sun, Ge You, Krystyna Mikava, and Sherin Glady.
+Website designed and built by Nashwa Hamido and updated by MODU team. 
 
-Furniture names describe the pieces modelled. MODU is not affiliated with IKEA.
+The MODU app was built by the MODU team:
+
+| Name | Role |
+| --- | --- |
+| Nashwa Hamido | Project manager, full-stack developer and front-end lead |
+| Ge You | Backend lead (assembly logic and 3D pipeline) |
+| Sherin Glady | Brand and visual designer, illustrator, marketing |
+| Emma Tianyi | UX designer, 3D artist |
+| Astrid Yin | Strategist, narrative designer |
+| Krystyna Mikava | UX/UI designer, front-end developer |
+
+The mascot, companions, furniture renders and room renders are the team's shared artwork. Furniture names describe the pieces modelled. MODU is not affiliated with IKEA.
